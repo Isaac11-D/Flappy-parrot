@@ -7,49 +7,49 @@ public class Jugador : MonoBehaviour
     //Fisicas
     private Rigidbody2D rigidbody2D;
     private Animator animator;
-    public GameController gameController;
-    public GameObject SonidoVuelo;
-    public GameObject SonidoMuerte;
+    public GameController gameController;  // ← Ya no usas instance
+    public AudioSource SonidoVuelo;        // ← AudioSource, NO GameObject
+    public AudioSource SonidoMuerte;       // ← AudioSource, NO GameObject
 
     //Variables Globales
     private bool EstaMuerto;
-    
     public float FuerzaSalto = 200f;
 
-    // Se llama a Start antes de la actualizaci�n del primer cuadro
-    void Start()
-    {
-       
-    }
-
-    // La actualizaci�n se llama una vez por cuadro
-    void Update()
-    {
-        if (EstaMuerto) return; //Si no esta muerto cumplir funciones
-
-        if(Input.GetMouseButtonDown(0)) //Volar con boton Click Izquierdo
-        {
-            rigidbody2D.linearVelocity = Vector2.zero;
-            rigidbody2D.AddForce(Vector2.up * FuerzaSalto);
-            animator.SetTrigger("Volar");
-            Instantiate(SonidoVuelo);
-        }
-    }
-
-    //Verificar las Fisicas
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
-    //Detecta que el personaje choca con el suelo, muere y genera el GameOver
+    void Update()
+    {
+        if (EstaMuerto) return;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            rigidbody2D.linearVelocity = Vector2.zero;
+            rigidbody2D.AddForce(Vector2.up * FuerzaSalto);
+            animator.SetTrigger("Volar");
+
+            if (SonidoVuelo != null)
+                SonidoVuelo.Play();  // ← .Play() en vez de Instantiate
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (EstaMuerto) return; // Evita doble muerte
+
         EstaMuerto = true;
         animator.SetTrigger("Muerte");
-        Instantiate(SonidoMuerte);
-        GameController.instance.MurcielagoMuerto();
-        rigidbody2D.linearVelocity = Vector2.zero;
+
+        if (SonidoMuerte != null)
+            SonidoMuerte.Play();  // ← .Play() en vez de Instantiate
+
+        // Llama al Game Over
+        if (gameController != null)
+            gameController.MurcielagoMuerto();  // ← Usa el objeto asignado
+        else
+            GameController.instance.MurcielagoMuerto(); // ← Alternativa si usas singleton
     }
 }

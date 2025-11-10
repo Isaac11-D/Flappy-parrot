@@ -1,7 +1,16 @@
 fileFormatVersion: 2
-guid: 178162a82bd672840a80ee656637b7de
+guid: 258f209fec233a859b74af348f1c98d6
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7438799040232646838
+    second: loroo1 (1)_0
+  - first:
+      213: -5016075270370352563
+    second: loroo1 (1)_1
+  - first:
+      213: 3687717698210202483
+    second: loroo1 (1)_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -34,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -65,7 +74,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
@@ -108,12 +117,78 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: loroo1 (1)_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 15
+        width: 120
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a479a637fa314c890800000000000000
+      internalID: -7438799040232646838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loroo1 (1)_1
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 132
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4224fe2e12536ab0800000000000000
+      internalID: -5016075270370352563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: loroo1 (1)_2
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 11
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3738db945b76d2330800000000000000
+      internalID: 3687717698210202483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -122,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      loroo1 (1)_0: -7438799040232646838
+      loroo1 (1)_1: -5016075270370352563
+      loroo1 (1)_2: 3687717698210202483
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
